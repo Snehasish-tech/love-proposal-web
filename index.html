@@ -33,6 +33,7 @@
             <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.7;">Click to begin the magic </p>
         </div>
     </div>
+    
 
     <!-- Cute Moments Page -->
     <div id="cute-moments" class="page">
@@ -145,6 +146,7 @@
         <div class="love-letter-container">
             <h1>💌 A Special Letter For You 💌</h1>
             <p class="section-subtitle">Click the envelope to read my heart...</p>
+            
 
             <div class="envelope-wrapper" id="envelopeWrapper" onclick="openEnvelope()">
                 <div class="envelope" id="envelope">
@@ -169,7 +171,7 @@
 
                     <div class="letter-footer">
                         <p style="margin-top: 30px; font-style: italic; color: #8b5cf6;">Forever yours,</p>
-                        <p style="font-size: 1.3rem; color: #ec4899; font-weight: bold; margin-top: 10px;">Your Love 💕</p>
+                        <p style="font-size: 1.3rem; color: #ec4899; font-weight: bold; margin-top: 10px;">Snehasish💕</p>
                     </div>
                 </div>
             </div>
@@ -384,7 +386,18 @@
 
             <div class="buttons-container">
                 <button class="btn-yes" onclick="answerYes()">💚 YES! 💚</button>
-                <button class="btn-no" id="noBtn" onmouseover="moveNoButton()">❌ NO ❌</button>
+               <button
+                    class="btn-no"
+                    id="noBtn"
+                    onmouseover="runAway()"
+                    ontouchstart="runAway()"
+                >
+                    ❌ NO ❌
+                </button>
+            </div>
+
+<p id="noMessage" class="no-message"></p>
+
             </div>
             <p id="noMessage" style="margin-top: 15px; font-size: 1rem; color: #ef4444; font-weight: bold;"></p>
 
@@ -417,6 +430,12 @@
         </div>
     </div>
     
+<footer class="site-footer">
+    <p class="footer-logo">
+        <span class="logo">💖</span>
+        <span class="text">Snehasish</span>
+    </p>
+</footer>
 
 
     <script src="script.js"></script>

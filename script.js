@@ -329,73 +329,55 @@ You mean the world to me. 💕`;
 
          // Proposal
       
-        let noCount = 0;
+let noCount = 0;
+let escaped = false; // 🔑 first-time control
 
-    const buttonTexts = [
-        "NO ❌",
-        "Wait 😳",
-        "Heyyy 😨",
-        "Stop it 😭",
-        "Why tho 😢",
-        "Plzzz 🥺",
-        "Okay I’m scared 😵",
-        "You won’t catch me 😎",
-        "I give up 😵‍💫"
-    ];
+const messages = [
+    "Nice try 😏",
+    "Almost got me 😂",
+    "Too slow 🏃‍♂️💨",
+    "Why so serious 😎",
+    "Give up already 😭",
+    "I’m too fast ⚡",
+    "Still trying? 😆",
+    "Okay okay chill 😵",
+    "Just click YES 💚",
+    "NO button retired 🏳️"
+];
 
-    const extraMessages = [
-        "Bro still trying? 😭",
-        "This is getting awkward 😬",
-        "NO button is tired 😮‍💨",
-        "Last warning ⚠️",
-        "Fine… I’m done 😤"
-    ];
+function runAway() {
+    const btn = document.getElementById("noBtn");
+    const msg = document.getElementById("noMessage");
 
-    function moveNoButton() {
-        const btn = document.getElementById("noBtn");
-        const msg = document.getElementById("noMessage");
-
-        noCount++;
-
-        // random move
-        const x = Math.random() * 350 - 175;
-        const y = Math.random() * 350 - 175;
-
-        btn.style.position = "relative";
-        btn.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 20 - 10}deg)`;
-
-        // First 9 tries
-        if (noCount <= buttonTexts.length) {
-            btn.innerText = buttonTexts[noCount - 1];
-            msg.innerText = "Trying to say NO? 😏";
-
-        }
-        // Next 5 tries
-        else if (noCount <= buttonTexts.length + extraMessages.length) {
-            btn.innerText = "😵‍💫";
-            msg.innerText = extraMessages[noCount - buttonTexts.length - 1];
-
-        }
-        // Final state
-        else {
-            msg.innerText = "NO option has resigned 😌💼";
-            btn.style.display = "none";
-
-            // optional: tease YES button
-            const yesBtn = document.querySelector(".btn-yes");
-            yesBtn.style.transform = "scale(1.15)";
-            yesBtn.innerText = "💚 OKAY YES 💚";
-        }
-
-        // drama effects
-        if (noCount > 6) btn.style.transform += " scale(0.8)";
-        if (noCount > 10) btn.style.opacity = "0.6";
+    // 🔹 first interaction → switch to escape mode
+    if (!escaped) {
+        escaped = true;
+        btn.classList.add("escape");
     }
 
-    function answerYes() {
-        changePage("celebration");
-    }
+    noCount++;
 
+    const padding = 20;
+    const maxX = window.innerWidth - btn.offsetWidth - padding;
+    const maxY = window.innerHeight - btn.offsetHeight - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    btn.style.left = `${x}px`;
+    btn.style.top = `${y}px`;
+
+    if (noCount <= messages.length) {
+        msg.innerText = messages[noCount - 1];
+    } else {
+        msg.innerText = "NO button has left the universe 🚀😂";
+        btn.style.display = "none";
+    }
+}
+
+function answerYes() {
+    changePage("celebration");
+}
         // Celebration
         function createConfetti() {
             for (let i = 0; i < 50; i++) {
