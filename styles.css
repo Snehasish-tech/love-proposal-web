@@ -833,37 +833,28 @@
             width: 100%;
             height: 150px;       /* enough space for mobile */
         }
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
 
-                    .buttons-container {
-                    display: flex;
-                    justify-content: center;
-                    gap: 20px;
-                    position: relative;
-                }
+#yesBtn {
+    position: relative;
+    z-index: 10; /* always on top */
+}
 
-                /* initial state = normal button */
-                #noBtn {
-                    position: relative;         /* start normal */
-                    transition: transform 0.25s ease;
-                }
+#noBtn {
+    position: relative; /* initial state */
+}
 
-                /* after escape starts */
-                #noBtn.escape {
-                    position: fixed;
-                    z-index: 9999;
-                    transition: left 0.2s ease, top 0.2s ease;
-                }
-
-                .no-message {
-                    margin-top: 20px;
-                    text-align: center;
-                    font-weight: bold;
-                    color: #ef4444;
-                }
-
-
-
-
+#noBtn.escape {
+    position: fixed;
+    z-index: 5; /* lower than YES */
+    transition: left 0.15s ease, top 0.15s ease;
+}
 
         .btn-yes {
             padding: 18px 50px;

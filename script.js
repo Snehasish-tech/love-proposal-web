@@ -333,16 +333,22 @@ let noCount = 0;
 let escaped = false; // 🔑 first-time control
 
 const messages = [
-    "Nice try 😏",
-    "Almost got me 😂",
-    "Too slow 🏃‍♂️💨",
-    "Why so serious 😎",
-    "Give up already 😭",
-    "I’m too fast ⚡",
-    "Still trying? 😆",
-    "Okay okay chill 😵",
-    "Just click YES 💚",
-    "NO button retired 🏳️"
+   "Please… don’t do this 😔",
+    "Why are you being like this? 🥺",
+    "I’m really trying here 💔",
+    "Please listen to me just once 😢",
+    "You’re breaking my heart a little 💗",
+    "I can’t run forever like this 😞",
+    "Please stop… I’m getting tired 😭",
+    "Why won’t you understand me? 😔",
+    "I’m almost about to cry now 🥹",
+    "Please… I’m begging you 😢",
+    "This is really hurting my feelings 💔",
+    "I don’t want to be ignored 😞",
+    "Please don’t make me sad 😭",
+    "I’m trying my best, please… 🥺",
+    "Why does this have to be so hard? 😔",
+    "I think I might actually cry now… 😢"
 ];
 
 function runAway() {
