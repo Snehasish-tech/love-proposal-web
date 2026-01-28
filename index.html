@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Music Toggle -->
+    <button id="musicToggle" class="music-toggle">
+        <span id="musicIcon">🎵</span>
+    </button>
+
     <!-- Home Page -->
     <div id="home" class="page active">
         <div class="animated-hearts" id="animatedHearts"></div>
         <div class="home-content">
-            <h1>✨ Welcome My Love! ✨</h1>
+            <h1 class="neon-text">✨ Welcome My Love! ✨</h1>
             
             <div class="cute-gif">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #fbbf24, #ec4899); display: flex; justify-content: center; align-items: center; font-size: 5rem;">
-                    🥰
-                </div>
+                <div class="gif-inner">🥰</div>
             </div>
 
             <div class="cute-message-box">
@@ -26,53 +31,54 @@
                 <p>✨ Are you ready for the cutest surprise ever? ✨</p>
             </div>
 
-            <p style="font-size: 1.3rem; color: #a855f7; font-weight: bold;">Get ready for an adventure filled with love, fun, and surprises!</p>
+            <p class="subtitle-text">Get ready for an adventure filled with love, fun, and surprises!</p>
             
-            <button class="btn-start" onclick="changePage('cute-moments')">🚀 Start Our Journey 🚀</button>
+            <button class="btn-start" onclick="changePage('cute-moments')">
+                <span>🚀 Start Our Journey 🚀</span>
+            </button>
             
-            <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.7;">Click to begin the magic </p>
+            <p class="hint-text">Click to begin the magic ✨</p>
         </div>
     </div>
     
-
     <!-- Cute Moments Page -->
     <div id="cute-moments" class="page">
         <div class="cute-moments-container">
-            <h1>💖 Our Cutest Moments 💖</h1>
+            <h1 class="neon-text">💖 Our Cutest Moments 💖</h1>
             <p class="section-subtitle">Every moment with you is precious...</p>
 
             <div class="moments-grid">
-                <div class="moment-card" style="background: linear-gradient(135deg, #fbbf24, #f97316);">
+                <div class="moment-card" data-color="cyan">
                     <div class="moment-emoji">😊</div>
                     <h3>First Time We Talked</h3>
                     <p>That nervous excitement when we first started chatting... I knew you were special!</p>
                 </div>
 
-                <div class="moment-card" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
+                <div class="moment-card" data-color="pink">
                     <div class="moment-emoji">😂</div>
                     <h3>Your Silly Jokes</h3>
                     <p>The way you make me laugh until my cheeks hurt. Your humor is absolutely adorable!</p>
                 </div>
 
-                <div class="moment-card" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">
+                <div class="moment-card" data-color="purple">
                     <div class="moment-emoji">🌙</div>
                     <h3>Late Night Talks</h3>
                     <p>Those deep conversations at 2 AM... talking to you never gets old!</p>
                 </div>
 
-                <div class="moment-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+                <div class="moment-card" data-color="green">
                     <div class="moment-emoji">🎵</div>
                     <h3>Sharing Songs</h3>
                     <p>When you send me songs that remind you of us... melts my heart every time!</p>
                 </div>
 
-                <div class="moment-card" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                <div class="moment-card" data-color="blue">
                     <div class="moment-emoji">🤗</div>
                     <h3>Your Sweet Messages</h3>
                     <p>Good morning texts, random "thinking of you"... you always brighten my day!</p>
                 </div>
 
-                <div class="moment-card" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">
+                <div class="moment-card" data-color="red">
                     <div class="moment-emoji">💝</div>
                     <h3>Just Being You</h3>
                     <p>Your genuine, caring, beautiful soul... that's what I fell for!</p>
@@ -80,7 +86,7 @@
             </div>
 
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('gif-gallery')">Next: Cute Vibes 🎀</button>
+                <button class="btn-nav" onclick="changePage('gif-gallery')">Next: Cute Vibes 🎀</button>
             </div>
         </div>
     </div>
@@ -88,55 +94,55 @@
     <!-- GIF Gallery Page -->
     <div id="gif-gallery" class="page">
         <div class="gif-gallery-container">
-            <h1>🎀 How You Make Me Feel 🎀</h1>
+            <h1 class="neon-text">🎀 How You Make Me Feel 🎀</h1>
             <p class="section-subtitle">Express yourself with these vibes!</p>
 
             <div class="gif-grid">
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #fbbf24, #f97316);">
-                        <div style="font-size: 4rem;">🥺</div>
+                    <div class="gif-placeholder" data-color="cyan">
+                        <div class="emoji-large">🥺</div>
                     </div>
                     <p>When you're being extra cute</p>
                 </div>
 
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
-                        <div style="font-size: 4rem;">😍</div>
+                    <div class="gif-placeholder" data-color="pink">
+                        <div class="emoji-large">😍</div>
                     </div>
                     <p>How I look at you</p>
                 </div>
 
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">
-                        <div style="font-size: 4rem;">🤗</div>
+                    <div class="gif-placeholder" data-color="purple">
+                        <div class="emoji-large">🤗</div>
                     </div>
                     <p>Virtual hugs for you</p>
                 </div>
 
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <div style="font-size: 4rem;">😘</div>
+                    <div class="gif-placeholder" data-color="green">
+                        <div class="emoji-large">😘</div>
                     </div>
                     <p>Sending you kisses</p>
                 </div>
 
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
-                        <div style="font-size: 4rem;">💕</div>
+                    <div class="gif-placeholder" data-color="blue">
+                        <div class="emoji-large">💕</div>
                     </div>
                     <p>My heart beats for you</p>
                 </div>
 
                 <div class="gif-card">
-                    <div class="gif-placeholder" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">
-                        <div style="font-size: 4rem;">🎉</div>
+                    <div class="gif-placeholder" data-color="red">
+                        <div class="emoji-large">🎉</div>
                     </div>
                     <p>Celebrating you every day</p>
                 </div>
             </div>
 
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('love-letter')">Continue Journey 💖</button>
+                <button class="btn-nav" onclick="changePage('love-letter')">Continue Journey 💖</button>
             </div>
         </div>
     </div>
@@ -144,10 +150,9 @@
     <!-- Love Letter Page -->
     <div id="love-letter" class="page">
         <div class="love-letter-container">
-            <h1>💌 A Special Letter For You 💌</h1>
+            <h1 class="neon-text">💌 A Special Letter For You 💌</h1>
             <p class="section-subtitle">Click the envelope to read my heart...</p>
             
-
             <div class="envelope-wrapper" id="envelopeWrapper" onclick="openEnvelope()">
                 <div class="envelope" id="envelope">
                     <div class="envelope-flap"></div>
@@ -155,58 +160,57 @@
                         <div class="heart-seal">💕</div>
                     </div>
                 </div>
-                <p style="color: #ec4899; margin-top: 20px; font-weight: 600; animation: pulse 2s infinite;">
-                    ✨ Click to open ✨
-                </p>
+                <p class="click-hint">✨ Click to open ✨</p>
             </div>
 
             <div class="letter-content" id="letterContent">
                 <div class="letter-paper">
                     <div class="letter-header">
-                        <p style="font-size: 1.2rem; color: #ec4899; margin-bottom: 10px;">To My Special One,</p>
-                        <div style="font-size: 2rem; margin: 10px 0;">💖</div>
+                        <p class="letter-to">To My Special One,</p>
+                        <div class="letter-heart">💖</div>
                     </div>
                     
                     <div class="letter-text" id="letterText"></div>
 
                     <div class="letter-footer">
-                        <p style="margin-top: 30px; font-style: italic; color: #8b5cf6;">With all my heart,</p>
-                        <p style="font-size: 1.3rem; color: #ec4899; font-weight: bold; margin-top: 10px;">Snehasish💕</p>
+                        <p class="letter-from">With all my heart,</p>
+                        <p class="letter-signature">Snehasish 💕</p>
                     </div>
                 </div>
             </div>
 
             <div class="nav-buttons" id="letterNavButtons" style="display: none;">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('memory-game')">Next: Play Game 🎮</button>
+                <button class="btn-nav" onclick="changePage('gallery')">Next: Gallery 📸</button>
             </div>
         </div>
     </div>
 
-    <!-- Gallery Page -->
+    <!-- Gallery Carousel Page -->
     <div id="gallery" class="page">
         <div class="gallery-container">
-            <h1>💖 Reasons I Love You 💖</h1>
-            
+            <h1 class="neon-text">📸 Things I Love About You 📸</h1>
+            <p class="section-subtitle">Swipe through my favorite things about you!</p>
+
             <div class="carousel">
                 <div class="carousel-slide active">
                     <div class="emoji">😊</div>
-                    <h2>Your Smile</h2>
-                    <p>Your smile lights up my entire world</p>
+                    <h2>Your Beautiful Smile</h2>
+                    <p>It lights up my entire world</p>
                 </div>
                 <div class="carousel-slide">
-                    <div class="emoji">😄</div>
-                    <h2>Your Laugh</h2>
-                    <p>The most beautiful sound I've ever heard</p>
+                    <div class="emoji">💬</div>
+                    <h2>The Way You Talk</h2>
+                    <p>I could listen to you for hours</p>
                 </div>
                 <div class="carousel-slide">
-                    <div class="emoji">❤️</div>
-                    <h2>Your Heart</h2>
-                    <p>So kind, so pure, so beautiful</p>
+                    <div class="emoji">🤗</div>
+                    <h2>Your Warm Heart</h2>
+                    <p>You make everyone feel special</p>
                 </div>
                 <div class="carousel-slide">
                     <div class="emoji">🌟</div>
-                    <h2>Your Dreams</h2>
-                    <p>I believe in every single one of them</p>
+                    <h2>Your Personality</h2>
+                    <p>You're one of a kind</p>
                 </div>
                 <div class="carousel-slide">
                     <div class="emoji">🎨</div>
@@ -222,60 +226,12 @@
 
             <div class="carousel-controls">
                 <button class="carousel-btn" onclick="prevSlide()">◀</button>
+                <div class="carousel-dots" id="carouselDots"></div>
                 <button class="carousel-btn" onclick="nextSlide()">▶</button>
             </div>
 
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('memory-game')">Next: Play a Game 🎮</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Gallery Page -->
-    <div id="gallery" class="page">
-        <div class="gallery-container">
-            <h1>💖 Reasons I Love You 💖</h1>
-            
-            <div class="carousel">
-                <div class="carousel-slide active">
-                    <div class="emoji">😊</div>
-                    <h2>Your Smile</h2>
-                    <p>Your smile lights up my entire world</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="emoji">😄</div>
-                    <h2>Your Laugh</h2>
-                    <p>The most beautiful sound I've ever heard</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="emoji">❤️</div>
-                    <h2>Your Heart</h2>
-                    <p>So kind, so pure, so beautiful</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="emoji">🌟</div>
-                    <h2>Your Dreams</h2>
-                    <p>I believe in every single one of them</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="emoji">🎨</div>
-                    <h2>Your Creativity</h2>
-                    <p>The way you see the world amazes me</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="emoji">💫</div>
-                    <h2>You're Perfect</h2>
-                    <p>Everything about you is just right</p>
-                </div>
-            </div>
-
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="prevSlide()">◀</button>
-                <button class="carousel-btn" onclick="nextSlide()">▶</button>
-            </div>
-
-            <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('memory-game')">Next: Play a Game 🎮</button>
+                <button class="btn-nav" onclick="changePage('memory-game')">Next: Play a Game 🎮</button>
             </div>
         </div>
     </div>
@@ -283,8 +239,8 @@
     <!-- Memory Game Page -->
     <div id="memory-game" class="page">
         <div class="memory-container">
-            <h1>💝 Memory Match Game 💝</h1>
-            <p style="color: #6b7280; margin-bottom: 20px;">Find all the matching pairs of love!</p>
+            <h1 class="neon-text">💝 Memory Match Game 💝</h1>
+            <p class="section-subtitle">Find all the matching pairs of love!</p>
             
             <div class="memory-stats">
                 <div class="stat">
@@ -304,8 +260,8 @@
             <div class="memory-grid" id="memoryGrid"></div>
 
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="resetMemoryGame()">Reset Game 🔄</button>
-                <button class="btn-nav btn-nav-primary" onclick="changePage('love-calculator')">Next: Love Calculator 💕</button>
+                <button class="btn-nav btn-secondary" onclick="resetMemoryGame()">Reset Game 🔄</button>
+                <button class="btn-nav" onclick="changePage('love-calculator')">Next: Love Calculator 💕</button>
             </div>
         </div>
     </div>
@@ -313,11 +269,8 @@
     <!-- Love Calculator Page -->
     <div id="love-calculator" class="page">
         <div class="calculator-container">
-            <div class="floating-sticker sticker-1">💕</div>
-            
-
-            <h1>💘 Love Calculator 💘</h1>
-            <p style="color: #6b7280; margin-bottom: 30px;">Let's calculate our love compatibility!</p>
+            <h1 class="neon-text">💘 Love Calculator 💘</h1>
+            <p class="section-subtitle">Let's calculate our love compatibility!</p>
             
             <div class="input-group">
                 <label>Your Name</label>
@@ -329,25 +282,27 @@
                 <input type="text" id="name2" placeholder="Enter my name">
             </div>
             
-            <button class="calculate-btn" onclick="calculateLove()">Calculate Love 💕</button>
+            <button class="calculate-btn" onclick="calculateLove()">
+                <span>Calculate Love 💕</span>
+            </button>
             
             <div class="result-display" id="loveResult">
                 <div class="result-gif" id="resultGif">😍</div>
                 <div class="love-percentage" id="percentage">0%</div>
-                <h3 id="resultMessage" style="color: #ec4899; margin-bottom: 15px;"></h3>
-                <p id="resultDescription" style="color: #6b7280;"></p>
+                <h3 id="resultMessage"></h3>
+                <p id="resultDescription"></p>
                 
-                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                    <span style="font-size: 2rem;">💑</span>
-                    <span style="font-size: 2rem;">💐</span>
-                    <span style="font-size: 2rem;">🎉</span>
-                    <span style="font-size: 2rem;">✨</span>
-                    <span style="font-size: 2rem;">💯</span>
+                <div class="result-emojis">
+                    <span>💑</span>
+                    <span>💐</span>
+                    <span>🎉</span>
+                    <span>✨</span>
+                    <span>💯</span>
                 </div>
             </div>
 
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="changePage('puzzle')">Next: Puzzle Challenge 🧩</button>
+                <button class="btn-nav" onclick="changePage('puzzle')">Next: Puzzle Challenge 🧩</button>
             </div>
         </div>
     </div>
@@ -355,19 +310,19 @@
     <!-- Puzzle Page -->
     <div id="puzzle" class="page">
         <div class="puzzle-container">
-            <h1>🧩 Sliding Puzzle 🧩</h1>
-            <p style="color: #6b7280; margin-bottom: 20px;">Solve the puzzle to continue! (Arrange 1-8)</p>
+            <h1 class="neon-text">🧩 Sliding Puzzle 🧩</h1>
+            <p class="section-subtitle">Solve the puzzle to continue! (Arrange 1-8)</p>
             
             <div class="puzzle-board" id="puzzleBoard"></div>
             
             <div class="nav-buttons">
-                <button class="btn-nav btn-nav-primary" onclick="shufflePuzzle()">Shuffle 🔀</button>
-                <button class="btn-nav btn-nav-primary" onclick="changePage('proposal')">Continue to Proposal 💍</button>
+                <button class="btn-nav btn-secondary" onclick="shufflePuzzle()">Shuffle 🔀</button>
+                <button class="btn-nav" onclick="changePage('proposal')">Continue to Proposal 💍</button>
             </div>
         </div>
     </div>
 
-     <!-- Proposal Page -->
+    <!-- Proposal Page -->
     <div id="proposal" class="page">
         <div class="floating-heart" style="top: 10%; left: 20%; animation-delay: 0s;">💕</div>
         <div class="floating-heart" style="top: 30%; right: 25%; animation-delay: 1s;">💗</div>
@@ -375,41 +330,28 @@
         <div class="floating-heart" style="bottom: 10%; right: 20%; animation-delay: 3s;">💖</div>
 
         <div class="proposal-container">
-            <h1>Will You Be Mine? 💍</h1>
+            <h1 class="neon-text">Will You Be Mine? 💍</h1>
 
             <div class="proposal-message">
                 <h2>This is the moment...</h2>
                 <p>After all the fun, games, and laughter...</p>
                 <p>After every smile, every conversation, every memory...</p>
-                <p style="color: #ec4899; font-weight: bold; font-size: 1.2rem; margin-top: 20px;">Will you be my girlfriend? 💝</p>
+                <p class="proposal-question">Will you be my girlfriend? 💝</p>
             </div>
 
             <div class="buttons-container">
                 <button class="btn-yes" onclick="answerYes()">💚 YES! 💚</button>
-               <button
-                    class="btn-no"
-                    id="noBtn"
-                    onmouseover="runAway()"
-                    ontouchstart="runAway()"
-                >
-                    ❌ NO ❌
-                </button>
+                <button class="btn-no" id="noBtn" onmouseover="runAway()" ontouchstart="runAway()">❌ NO ❌</button>
             </div>
 
-<p id="noMessage" class="no-message"></p>
-
-            </div>
-            <p id="noMessage" style="margin-top: 15px; font-size: 1rem; color: #ef4444; font-weight: bold;"></p>
-
-
-            
+            <p id="noMessage" class="no-message"></p>
         </div>
     </div>
 
     <!-- Celebration Page -->
     <div id="celebration" class="page">
         <div class="celebration-container">
-            <h1>🎉 YES! 🎉</h1>
+            <h1 class="neon-text celebration-title">🎉 YES! 🎉</h1>
 
             <div class="celebration-content">
                 <h2>You made me the happiest person alive!</h2>
@@ -423,20 +365,21 @@
 
                 <div class="heart-message">I 💕 You Forever!</div>
 
-                <p style="color: #6b7280; font-style: italic;">"This is just the beginning of our beautiful story..." 📖✨</p>
+                <p class="celebration-quote">"This is just the beginning of our beautiful story..." 📖✨</p>
             </div>
 
-            <button class="btn-start" onclick="changePage('home')">Start Over 💕</button>
+            <button class="btn-start" onclick="changePage('home')">
+                <span>Start Over 💕</span>
+            </button>
         </div>
     </div>
     
-<footer class="site-footer">
-    <p class="footer-logo">
-        <span class="logo">💖</span>
-        <span class="text">SD</span>
-    </p>
-</footer>
-
+    <footer class="site-footer">
+        <p class="footer-logo">
+            <span class="logo">💖</span>
+            <span class="text">SD</span>
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
